@@ -1,14 +1,13 @@
-import telebot
 import os
-import google.generativeai as genai
-from telebot import types
+import telebot
 import time
+import google.generativeai as genai
 
-# --- လူကြီးမင်းပေးထားသော Key များ ---
-API_TOKEN = '8656360830:AAH7V6Hhb1AqIytZdyY984YGnBIDPPfwTfc'
-GEMINI_API_KEY = 'AIzaSyB9od09ydz7pVRYzwkB1NduWa6yOT1RFPs'
-# ----------------------------------
+# Render Environment ထဲက Key တွေကို ဖတ်ခိုင်းတာပါ
+API_TOKEN = os.environ.get('BOT_TOKEN')
+GEMINI_API_KEY = os.environ.get('GOOGLE_API_KEY')
 
+# Bot နဲ့ Gemini ကို ချိတ်ဆက်ခြင်း
 bot = telebot.TeleBot(API_TOKEN)
 genai.configure(api_key=GEMINI_API_KEY)
 model = genai.GenerativeModel('gemini-1.5-flash')
