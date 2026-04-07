@@ -1,5 +1,8 @@
 import os
 import telebot
+import os
+import telebot
+from telebot import types
 import time
 import google.generativeai as genai
 
@@ -11,6 +14,12 @@ GEMINI_API_KEY = os.environ.get('GOOGLE_API_KEY')
 bot = telebot.TeleBot(API_TOKEN)
 genai.configure(api_key=GEMINI_API_KEY)
 model = genai.GenerativeModel('gemini-1.5-flash')
+GEMINI_API_KEY = os.environ.get('GOOGLE_API_KEY')
+
+# Bot နဲ့ Gemini ကို ချိတ်ဆက်ခြင်း
+bot = telebot.TeleBot(API_TOKEN)
+genai.configure(api_key=GEMINI_API_KEY)
+model = 
 
 user_data = {}
 
